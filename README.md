@@ -48,3 +48,35 @@ its super easy- simply paste this script tag into the head of your HTML document
     element.textContent = ssjs.get('bean');
     //element will now display 'frog'
     ```
+- `ssjs.edit(key, newvalue);` - update an item
+    - Usage: updates the given key with the new value. pretty self explanatory.
+    - Example snippet:
+    ```javascript
+    ssjs.edit('Foo', 'New value for Foo'); //'Foo' will be changed
+    ```
+- `ssjs.add(key, value)` - add an item
+    - Usage: adds a new item to the settings, such as when you have an item that isn't added in init();
+    - Example snippet:
+    ```javascript
+    ssjs.add('newFoo', 'newBar'); // key 'newFoo' now exists
+    ```
+- `ssjs.delete(key)` - delete an item
+    - Usage: deletes an item from the settings object, when you don't need it anymore or whatever
+    - Example snippet:
+    ```javascript
+    ssjs.delete('Foo') //Foo is gone
+    ```
+- `ssjs.deleteAll(force)` - delete everything
+    - Usage: clears the entire settings object. pass `true` to the arg to bypass the confirmation popup.
+    - Example snippet:
+    ```javascript
+    ssjs.deleteAll() // opens a confirmation popup
+    ssjs.deleteAll(true) // just removes everything with no confirmation
+- `ssjs.all()` - returns the entire parsed settings JSON
+    - Usage: gives you a parsed JSON object containing all the settings.
+    - Example snippet:
+    ```javascript
+    let settings = ssjs.all();
+    console.log(settings);
+   //outputs all settings to console
+    ```
