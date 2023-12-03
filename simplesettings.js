@@ -26,7 +26,6 @@ const ssjs = (function() {
                 const parsedData = JSON.parse(data);
                 parsedData[key] = newvalue;
                 localStorage.setItem('ss', JSON.stringify(parsedData));
-                console.log('%c [SimpleSettings][edit]: ' + `%c Key "${key}" updated with value "${newvalue}"`, 'background: #222; color: #bada55', 'background: #222; color: white');
             } else {
                 console.log('%c [SimpleSettings][edit]: ' + `%c SimpleSettings object not found in storage."`, 'background: #222; color: #bada55', 'background: #222; color: white');
             }
